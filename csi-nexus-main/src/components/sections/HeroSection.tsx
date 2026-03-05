@@ -56,7 +56,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Innovating · Learning · Building the Future Together
+            Innovating | Learning | Building the Future Together
           </motion.p>
 
           {/* Buttons */}
