@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import collegeImage from "@/assets/college_image.jpg";
+import csiLogo from "@/assets/csi_logo (1).jpg";
 import { Target, Eye, Building, Users } from "lucide-react";
 
 const About = () => {
@@ -36,8 +38,16 @@ const About = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-border flex items-center justify-center">
-                <div className="text-7xl font-display font-bold text-gradient">CSI</div>
+              <div className="w-full max-w-[560px] rounded-2xl overflow-hidden border border-border bg-muted/10">
+                <img
+                  src={csiLogo}
+                  alt="CSI Logo"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.src = "/placeholder.svg";
+                  }}
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -65,8 +75,16 @@ const About = () => {
         <section className="section-padding !py-16 bg-card/30">
           <div className="container-narrow grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-secondary to-muted border border-border flex items-center justify-center">
-                <Building size={64} className="text-muted-foreground" />
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-muted/10 flex items-center justify-center">
+                <img
+                  src={collegeImage}
+                  alt="PES Modern College of Engineering"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.src = "/placeholder.svg";
+                  }}
+                />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
