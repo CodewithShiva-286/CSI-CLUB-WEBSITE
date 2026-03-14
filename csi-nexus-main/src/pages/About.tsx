@@ -5,6 +5,8 @@ import collegeImage from "@/assets/college_image.jpg";
 import csiLogo from "@/assets/csi_logo (1).jpg";
 import { Target, Eye, Building, Users } from "lucide-react";
 
+
+
 const About = () => {
   return (
     <>
