@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Students Empowered" },
-  { value: 50, suffix: "+", label: "Events Organized" },
+  { value: 100, suffix: "+", label: "Students Empowered" },
+  { value: 20, suffix: "+", label: "Events Organized" },
   { value: 20, suffix: "+", label: "Projects Completed" },
-  { value: 10, suffix: "+", label: "Years Active" },
+  { value: 5, suffix: "+", label: "Years Active" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {

@@ -1,4 +1,10 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
+
+const counterKeyframes = {
+  "0%": { "--num": "0" } as Record<"--num", string>,
+  "100%": { "--num": "var(--target)" } as Record<"--num", string>,
+};
 
 export default {
   darkMode: ["class"],
@@ -78,10 +84,7 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "counter": {
-          "0%": { "--num": "0" } as any,
-          "100%": { "--num": "var(--target)" } as any,
-        },
+        counter: counterKeyframes,
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -89,5 +92,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

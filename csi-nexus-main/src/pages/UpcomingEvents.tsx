@@ -18,25 +18,46 @@ const UpcomingEvents = () => {
             </ScrollReveal>
 
             <div className="space-y-5">
-              {upcomingEvents.map((e, i) => (
-                <ScrollReveal key={e.title} delay={i * 0.1}>
-                  <div className={`glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 ${e.highlight ? 'border-primary/20 glow-border' : ''}`}>
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                          <span className="flex items-center gap-1"><CalendarDays size={12} className="text-primary" />{e.date}</span>
-                          <span className="flex items-center gap-1"><MapPin size={12} />{e.location}</span>
+              {upcomingEvents.map((e, i) => {
+                const registrationLink = e.registrationLink?.trim();
+                const isRegistrationOpen = Boolean(registrationLink);
+                const buttonClassName = `inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-colors shrink-0 self-start ${
+                  isRegistrationOpen
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "bg-primary/15 text-muted-foreground cursor-not-allowed"
+                }`;
+
+                return (
+                  <ScrollReveal key={e.title} delay={i * 0.1}>
+                    <div className={`glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 ${e.highlight ? 'border-primary/20 glow-border' : ''}`}>
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                            <span className="flex items-center gap-1"><CalendarDays size={12} className="text-primary" />{e.date}</span>
+                            <span className="flex items-center gap-1"><MapPin size={12} />{e.location}</span>
+                          </div>
+                          <h3 className="text-xl font-display font-semibold text-foreground">{e.title}</h3>
+                          <p className="text-sm text-muted-foreground">{e.desc}</p>
                         </div>
-                        <h3 className="text-xl font-display font-semibold text-foreground">{e.title}</h3>
-                        <p className="text-sm text-muted-foreground">{e.desc}</p>
+                        {isRegistrationOpen ? (
+                          <a
+                            href={registrationLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={buttonClassName}
+                          >
+                            Register <ArrowRight size={14} />
+                          </a>
+                        ) : (
+                          <button type="button" disabled className={buttonClassName}>
+                            Registration Starts Soon
+                          </button>
+                        )}
                       </div>
-                      <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors shrink-0 self-start">
-                        Register <ArrowRight size={14} />
-                      </button>
                     </div>
-                  </div>
-                </ScrollReveal>
-              ))}
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
         </section>

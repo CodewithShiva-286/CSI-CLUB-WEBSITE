@@ -6,31 +6,31 @@ import { User } from "lucide-react";
 
 const Team = () => {
   // Separate core team and teams
-  const coreTeam = teamMembers.slice(0, 4);
+  const coreTeam = teamMembers.slice(0, 3);
   const teams = [
     {
       name: "Tech Team",
-      members: [teamMembers[4], teamMembers[5]], // Technical Head, Co-Technical Head
+      members: [teamMembers[3], teamMembers[4]], // Technical Head, Co-Technical Head
     },
     {
       name: "Events Team",
-      members: [teamMembers[6], teamMembers[7]], // Event Coordinator, Assistant Event Coordinator
+      members: [teamMembers[5], teamMembers[6]], // Event Coordinator, Assistant Event Coordinator
     },
     {
       name: "Design Team",
-      members: [teamMembers[8], teamMembers[9]], // Creative Head, Assistant Creative Head
+      members: [teamMembers[7], teamMembers[8]], // Creative Head, Assistant Creative Head
     },
     {
       name: "Social Media Team",
-      members: [teamMembers[10], teamMembers[11]], // Social Media Manager, Assistant Social Media Manager
+      members: [teamMembers[9], teamMembers[10]], // Social Media Manager, Assistant Social Media Manager
     },
     {
       name: "Marketing Team",
-      members: [teamMembers[12], teamMembers[13]], // Marketing Manager, Assistant Marketing Manager
+      members: [teamMembers[11], teamMembers[12]], // Marketing Manager, Assistant Marketing Manager
     },
     {
       name: "Documentation Team",
-      members: [teamMembers[14], teamMembers[15]], // Documentation Manager, Assistant Documentation Manager
+      members: [teamMembers[13], teamMembers[14]], // Documentation Manager, Assistant Documentation Manager
     },
   ];
 
@@ -45,7 +45,7 @@ const Team = () => {
               <p className="text-xs uppercase tracking-widest text-primary font-medium mb-3">Our People</p>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">The Team</h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                Meet the passionate individuals driving CSI PES MCOE forward.
+                Meet the passionate individuals driving CSI PES MCOE forward , with a shared vision of fostering innovation, collaboration, and growth in the tech community.
               </p>
             </ScrollReveal>
           </div>

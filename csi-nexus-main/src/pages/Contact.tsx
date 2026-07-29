@@ -11,7 +11,32 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "We'll get back to you soon." });
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
+      toast({
+        title: "Missing details",
+        description: "Please fill in your name, email, and message before sending.",
+      });
+      return;
+    }
+
+    const recipient = "csi_comp@moderncoe.edu.in";
+    const subject = `CSI Website Contact - ${name}`;
+    const body = `Name:\n${name}\n\nEmail:\n${email}\n\nMessage:\n\n${message}`;
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const mailtoLink = document.createElement("a");
+    mailtoLink.href = mailtoUrl;
+    mailtoLink.style.display = "none";
+    document.body.appendChild(mailtoLink);
+    mailtoLink.click();
+    document.body.removeChild(mailtoLink);
+
+    window.location.assign(mailtoUrl);
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -67,8 +92,7 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
-                  >
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors">
                     Send Message <Send size={14} />
                   </button>
                 </form>
@@ -79,7 +103,7 @@ const Contact = () => {
                   <div className="glass rounded-2xl p-6">
                     <Mail size={20} className="text-primary mb-3" />
                     <h3 className="font-display font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">csi@pesmcoe.edu.in</p>
+                    <p className="text-sm text-muted-foreground">csi_comp@moderncoe.edu.in</p>
                   </div>
                   <div className="glass rounded-2xl p-6">
                     <MapPin size={20} className="text-primary mb-3" />

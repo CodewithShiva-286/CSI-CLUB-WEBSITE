@@ -1,21 +1,55 @@
-export const upcomingEvents = [
+export interface UpcomingEvent {
+  title: string;
+  date: string;
+  location: string;
+  desc: string;
+  highlight?: boolean;
+  registrationLink?: string;
+}
+
+export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "React & TypeScript Workshop",
-    date: "Mar 15, 2026",
-    location: "Seminar Hall",
-    desc: "Build modern web applications with React 19 and TypeScript.",
+    title: "Orientation Session for New CSI Members",
+    date: "To be updated soon",
+    location: "To be updated soon",
+    desc: "Get started with club CSI and learn about our initiatives.",
     highlight: true,
+    registrationLink: "https://forms.gle/Dwj9VPHfuv3q19Q39",
   },
   {
-    title: "AI/ML Hackathon",
-    date: "Apr 5-6, 2026",
-    location: "Campus",
-    desc: "24-hour hackathon focused on AI and machine learning solutions.",
+    title: "The basics of Computer Engineering",
+    date: "Sept, 2026",
+    location: "to be updated soon",
+    desc: "An introductory session on computer engineering fundamentals , Technologies , and career paths.",
+    registrationLink: "",
   },
   {
-    title: "Cloud Computing Masterclass",
-    date: "May 2026",
-    location: "Lab 201",
-    desc: "Hands-on AWS and cloud architecture workshop.",
+    title: "Hands-On Python Workshop",
+    date: "sept 2026",
+    location: "to be updated soon",
+    desc: "Learn the fundamentals of Python programming.By the end of this workshop, you'll be able to write basic Python programs and understand its applications in various domains.",
+    registrationLink: "",
   },
+  {
+    title: "Techtrek 3.0 - A Journey into the World of Technology",
+    date: "to be updated soon",
+    location: "to be updated soon",
+    desc: "Learn about the latest trends and innovations in technology.",
+    registrationLink: "",
+  },
+  {
+    title: "Code Fiesta 2026",
+    date: "to be updated soon",
+    location: "to be updated soon",
+    desc: "A coding competition where participants can showcase their programming skills and compete for prizes.",
+    registrationLink: "",
+  },
+  {
+    title: "Aspire 2026",
+    date: "to be updated soon",
+    location: "to be updated soon",
+    desc: "A session to help students explore different career paths and make informed decisions about their future.",
+    registrationLink: "",
+  }
+
 ];

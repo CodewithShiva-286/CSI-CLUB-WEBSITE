@@ -1,14 +1,11 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { upcomingEvents } from "@/data/upcomingEvents";
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
-const events = [
-  { title: "Web Dev Workshop", date: "Mar 2026", desc: "Build modern web apps with React and TypeScript" },
-  { title: "AI/ML Hackathon", date: "Apr 2026", desc: "24-hour innovation sprint on AI solutions" },
-  { title: "Cloud Computing Talk", date: "May 2026", desc: "Expert session on AWS and cloud architecture" },
-];
-
 const EventsPreview = () => {
+  const featuredEvents = upcomingEvents.slice(0, 3);
+
   return (
     <section className="section-padding">
       <div className="container-narrow">
@@ -25,7 +22,7 @@ const EventsPreview = () => {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-3 gap-5">
-          {events.map((e, i) => (
+          {featuredEvents.map((e, i) => (
             <ScrollReveal key={e.title} delay={i * 0.1}>
               <div className="glass rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
