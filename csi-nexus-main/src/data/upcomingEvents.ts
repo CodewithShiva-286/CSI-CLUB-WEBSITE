@@ -38,14 +38,14 @@ export const upcomingEvents: UpcomingEvent[] = [
     registrationLink: "",
   },
   {
-    title: "Code Fiesta 2026",
+    title: "Code Fiesta 2027",
     date: "to be updated soon",
     location: "to be updated soon",
     desc: "A coding competition where participants can showcase their programming skills and compete for prizes.",
     registrationLink: "",
   },
   {
-    title: "Aspire 2026",
+    title: "Aspire 2027",
     date: "to be updated soon",
     location: "to be updated soon",
     desc: "A session to help students explore different career paths and make informed decisions about their future.",
