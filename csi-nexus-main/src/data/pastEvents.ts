@@ -19,13 +19,13 @@ export const pastEvents = [
   },
   {
     title: "National Level Project Expo 2026",
-    date: "Apr 2026",
+    date: "April 2026",
     location: "Workshop Hall",
     desc: "A national level project expo where students showcased their innovative projects and ideas.",
   },
   {
-    title: "Techtrek 2025",
-    date: "Apr 2025",
+    title: "Techtrek 2.0 2025",
+    date: "April 2025",
     location: "424 classroom",
     desc: "An informative session for students covering object-oriented programming concepts and data structures and algorithms fundamentals.",
   },
@@ -35,4 +35,10 @@ export const pastEvents = [
     location: "424 classroom",
     desc: "An introductory session for new members to get started with club CSI and learn about our initiatives.",
   },
+  {
+    title: "Techtrek 2024",
+    date: "2024",
+    location: "424 classroom",
+    desc: "An informative session for students covering object-oriented programming concepts and data structures and algorithms fundamentals.",
+  }
 ];

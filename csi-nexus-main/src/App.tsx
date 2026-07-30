@@ -13,6 +13,8 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { useRouteTitle } from "./hooks/useRouteTitle";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 const queryClient = new QueryClient();
 
 const RouteTitleManager = () => {
@@ -26,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <RouteTitleManager />
         <Routes>
           <Route path="/" element={<Index />} />
