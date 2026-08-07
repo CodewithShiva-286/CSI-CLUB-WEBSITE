@@ -14,7 +14,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     location: "To be updated soon",
     desc: "Get started with club CSI and learn about our initiatives.",
     highlight: true,
-    registrationLink: "https://forms.gle/Dwj9VPHfuv3q19Q39",
+    registrationLink: "https://forms.gle/vbeUL8DvfaactnDC6",
   },
   {
     title: "The basics of Computer Engineering",
