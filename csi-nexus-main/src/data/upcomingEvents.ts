@@ -9,6 +9,14 @@ export interface UpcomingEvent {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
+    title: "Beyond Algorithms : Building intelligent solutions wit ML",
+    date: "28 september 2026",
+    location: "Online Lab",
+    desc: "Exploring how Machine Learning goes beyond algorithems to build intellient, practical and impactful solutions",
+    highlight: true,
+    registrationLink: "https://forms.gle/74uJzcPc8evqNJgFA",
+  },
+  {
     title: "Techtrek 3.0 - The basics of Computer Engineering",
     date: "Sept, 2026",
     location: "Online",

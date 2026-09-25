@@ -1,5 +1,11 @@
 export const pastEvents = [
   {
+    title: "Exploring Emerging Domains",
+    date: "19 september 2026",
+    location: "424 & 422 classroom ",
+    desc: "A session on exploring emerging domains, where participants learned about the latest trends and technologies from industry experts in the field of computer science.",
+  },
+  {
     title: "Web Development for Deployment Workshop",
     date: "11 Sept 2026",
     location: "SL-1",

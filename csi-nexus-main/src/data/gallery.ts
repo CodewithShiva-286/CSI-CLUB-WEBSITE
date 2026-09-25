@@ -22,6 +22,18 @@ const galleryModules = import.meta.glob("@/assets/gallery/**/*.{png,jpg,jpeg,web
 
 const formatAltText = (value: string) => value.replace(/\.[^/.]+$/, "");
 
+// Custom event display order per year — events listed here appear first, in this order.
+// Any events not listed fall back to alphabetical order after.
+const eventDisplayOrder: Record<string, string[]> = {
+  "2026": [
+    "WEB_DEVELOPMENT_WORKSHOP",
+    "Exploring Emerging Domains",
+    "CSI_2026_Orientation",
+  ],
+};
+
+
+
 const galleryMap = new Map<string, GalleryYear>();
 
 for (const [path, src] of Object.entries(galleryModules)) {
@@ -73,7 +85,23 @@ for (const [path, src] of Object.entries(galleryModules)) {
 
 export const galleryByYear: GalleryYear[] = Array.from(galleryMap.values())
   .sort((a, b) => Number(b.year) - Number(a.year))
-  .map((yearEntry) => ({
-    ...yearEntry,
-    events: yearEntry.events.sort((a, b) => a.title.localeCompare(b.title)),
-  }));
+  .map((yearEntry) => {
+    const order = eventDisplayOrder[yearEntry.year];
+
+    // Sort events: custom order first, then alphabetical for the rest
+    const sortedEvents = [...yearEntry.events];
+    if (order) {
+      sortedEvents.sort((a, b) => {
+        const aIdx = order.indexOf(a.title);
+        const bIdx = order.indexOf(b.title);
+        if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+        if (aIdx !== -1) return -1;
+        if (bIdx !== -1) return 1;
+        return a.title.localeCompare(b.title);
+      });
+    } else {
+      sortedEvents.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    return { ...yearEntry, events: sortedEvents };
+  });
