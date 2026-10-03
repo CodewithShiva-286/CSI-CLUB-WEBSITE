@@ -1,5 +1,11 @@
 export const pastEvents = [
   {
+    title: "Beyond Algorithms : Building intelligent solutions wit ML",
+    date: "28 september 2026",
+    location: "Online Lab",
+    desc: "Exploring how Machine Learning goes beyond algorithems to build intellient, practical and impactful solutions",
+  },
+  {
     title: "Exploring Emerging Domains",
     date: "19 september 2026",
     location: "424 & 422 classroom ",

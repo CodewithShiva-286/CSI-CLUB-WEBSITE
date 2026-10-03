@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { upcomingEvents } from "@/data/upcomingEvents";
-import { CalendarDays, MapPin, ArrowRight } from "lucide-react";
+import { CalendarDays, MapPin, ArrowRight, Sparkles } from "lucide-react";
 
 const UpcomingEvents = () => {
   return (
@@ -29,12 +29,17 @@ const UpcomingEvents = () => {
 
                 return (
                   <ScrollReveal key={e.title} delay={i * 0.1}>
-                    <div className={`glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 ${e.highlight ? 'border-primary/20 glow-border' : ''}`}>
+                    <div className={`glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 ${e.highlight ? 'border-l-4 border-l-primary border-primary/60 bg-primary/10 shadow-[0_0_30px_-10px_hsl(var(--glow)/0.55)] ring-1 ring-primary/30' : ''}`}>
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="space-y-2">
                           <div className="flex items-center gap-4 text-xs text-muted-foreground">
                             <span className="flex items-center gap-1"><CalendarDays size={12} className="text-primary" />{e.date}</span>
                             <span className="flex items-center gap-1"><MapPin size={12} />{e.location}</span>
+                            {e.highlight && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-1 font-semibold text-primary">
+                                <Sparkles size={12} /> Featured
+                              </span>
+                            )}
                           </div>
                           <h3 className="text-xl font-display font-semibold text-foreground">{e.title}</h3>
                           <p className="text-sm text-muted-foreground">{e.desc}</p>

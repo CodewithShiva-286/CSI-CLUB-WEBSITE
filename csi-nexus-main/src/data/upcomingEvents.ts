@@ -9,17 +9,17 @@ export interface UpcomingEvent {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "Beyond Algorithms : Building intelligent solutions wit ML",
-    date: "28 september 2026",
-    location: "Online Lab",
-    desc: "Exploring how Machine Learning goes beyond algorithems to build intellient, practical and impactful solutions",
+    title: "CSI Club Interviews - 2026",
+    date: "5th & 6th october 2026",
+    location: "325 classroom",
+    desc: "An opportunity for students to join the Computer Society of India (CSI) club and be a part of a community of like-minded individuals who are passionate about technology and innovation.",
     highlight: true,
-    registrationLink: "https://forms.gle/74uJzcPc8evqNJgFA",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSf5TVyOhQ744xoVCfmoxDG2SV2iSmHJ7ryDWPi_KBSmmnVcxQ/viewform",
   },
   {
-    title: "Techtrek 3.0 - The basics of Computer Engineering",
-    date: "Sept, 2026",
-    location: "Online",
+    title: "Techtrek 3.0",
+    date: "To be updated soon",
+    location: "To be updated soon",
     desc: "An introductory session on computer engineering fundamentals , Technologies , and career paths.",
     highlight: true,
     registrationLink: "",
